@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 :root {
   --primary-orange: #CD8B7C;
+  --primary-green: #4AB834;
+  --primary-dark: rgba(255, 255, 255, 0)
 }
 
 body {
@@ -11,6 +13,7 @@ body {
 
 .logo {
   width: 16.25rem;
+  height: auto;
 }
 
 /********LINKS**********/
@@ -26,5 +29,24 @@ nav ul li {
 }
 
 .navbar-nav>li>a {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
   color: var(--primary-orange) !important;
+  border-bottom: 0.1875rem solid var(--primary-dark);
+}
+
+.navbar-brand {
+  max-width: 17.25rem;
+  padding: 0 !important;
+  height: 4rem !important;
+}
+
+.navbar-nav>li>a.active, .navbar-nav>li>a.active:focus {
+  border-bottom: 0.1875rem solid var(--primary-green);
+}
+
+.navbar-nav>li>a:hover {
+  border-bottom: 0.1875rem solid var(--primary-green);
+  transition: transform 250ms;
+  transform: translateY(0.3rem);
 }

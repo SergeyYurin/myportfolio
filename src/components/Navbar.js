@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../cover.png';
+import logo from '../cover1.png';
 /* eslint-disable */
 
 const Navbar = () => {
@@ -28,12 +28,32 @@ const Navbar = () => {
           <ul className='navbar-nav ms-auto'>
             <li className='nav-item active'>
               <a className='nav-link' href='#'>
-                Home <span class='sr-only'>(current)</span>
+                Home <span class='sr-only'></span>
               </a>
             </li>
             <li className='nav-item'>
               <a className='nav-link' href='#'>
-                Link
+                About me
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='#'>
+                Services
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='#'>
+                How I work
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='#'>
+                Portfolio
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='#'>
+                Contacts
               </a>
             </li>
           </ul>
