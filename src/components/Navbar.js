@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../cover1.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 /* eslint-disable */
 
 const Navbar = () => {
@@ -18,7 +20,10 @@ const Navbar = () => {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-          <span className='navbar-toggler-icon'></span>
+          <FontAwesomeIcon
+            icon={faBars}
+            style={{ color: '#CD8B7C' }}
+          />
         </button>
 
         <div
