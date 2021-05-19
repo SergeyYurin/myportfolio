@@ -2,9 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 :root {
   --primary-white: #ffffff;
+  --primary-light-grey: #f4f4f4;
   --primary-orange: #CD8B7C;
   --primary-green: #4AB834;
-  --primary-dark: rgba(255, 255, 255, 0);
+  --primary-dark: rgb(255, 255, 255, 0);
+  --primary-dark2: rgb(52, 58, 64);
   --primary-red: #f04019;
   --primary-hover-red: #bf2402;
 }
@@ -179,4 +181,17 @@ nav ul li {
   .profile-img {
     width: 10rem;
   }
+}
+
+/**********Services*******/
+
+.services {
+  text-align: center;
+  padding-bottom: 2rem;
+  background-color: var(--primary-light-grey);
+}
+
+.services h1 {
+  color: var(--primary-orange);
+  text-transform: uppercase;
 }
