@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Share Tech Mono', monospace !important;
 }
 
 /**********NAVBAR*******/
@@ -146,5 +146,37 @@ nav ul li {
 @media(max-width: 767px) {
   .particles-canvas {
     display: none;
+  }
+}
+
+/**********ABOUT_ME*******/
+
+.photo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 16rem;
+  border-radius: 10%;
+  padding: .2rem;
+  border: 1px solid var(--primary-orange);
+}
+
+.about-heading {
+  color: var(--primary-orange);
+  text-transform: uppercase;
+}
+
+@media(max-width: 468px) {
+  .profile-img {
+    width: 10rem;
   }
 }
