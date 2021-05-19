@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Particles from 'react-particles-js';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
+import AboutMe from './components/AboutMe';
+
 function App() {
   return (
     <>
@@ -17,11 +19,19 @@ function App() {
                 value_area: 900,
               },
             },
+            shape: {
+              type: 'square',
+              stroke: {
+                width: 10,
+                color: '#4AB834',
+              },
+            },
           },
         }}
       />
       <Navbar />
       <Header />
+      <AboutMe />
     </>
   );
 }
