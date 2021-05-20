@@ -19,39 +19,44 @@ function Services() {
           <div className='col-md-3 col-sm-6'>
             <div className='box'>
               <div className='circle'>
-                <FontAwesomeIcon icon={faFileCode} size='2x' />
+                <FontAwesomeIcon
+                  className='icon'
+                  icon={faFileCode}
+                  size='2x'
+                />
               </div>
               <h3>Web Development</h3>
-              <p>
-                While creating a new project I always use new
-                technologies so your website or web application can be
-                most competitive on the market
-              </p>
+              <p>I always use only new technologies in my workflow</p>
             </div>
           </div>
           {/* - */}
           <div className='col-md-3 col-sm-6'>
             <div className='box'>
               <div className='circle'>
-                <FontAwesomeIcon icon={faDesktop} size='2x' />
+                <FontAwesomeIcon
+                  className='icon'
+                  icon={faDesktop}
+                  size='2x'
+                />
               </div>
               <h3>Web Design</h3>
-              <p>
-                I approach each project individually and always focus
-                on the result and customer requests
-              </p>
+              <p>Individuall approach each project</p>
             </div>
           </div>
           {/* - */}
           <div className='col-md-3 col-sm-6'>
             <div className='box'>
               <div className='circle'>
-                <FontAwesomeIcon icon={faFacebookF} size='2x' />
+                <FontAwesomeIcon
+                  className='icon'
+                  icon={faFacebookF}
+                  size='2x'
+                />
               </div>
               <h3>Facebook Ads SMM</h3>
               <p>
                 Your potential customers will see your products on the
-                Facebook or Instagram
+                Facebook
               </p>
             </div>
           </div>
@@ -59,12 +64,16 @@ function Services() {
           <div className='col-md-3 col-sm-6'>
             <div className='box'>
               <div className='circle'>
-                <FontAwesomeIcon icon={faGoogle} size='2x' />
+                <FontAwesomeIcon
+                  className='icon'
+                  icon={faGoogle}
+                  size='2x'
+                />
               </div>
               <h3>Goodle Ads</h3>
               <p>
-                Your service or product will appear at the top of the
-                Google search
+                Your product will appear at the top of the Google
+                search
               </p>
             </div>
           </div>
