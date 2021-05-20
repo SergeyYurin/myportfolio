@@ -220,6 +220,7 @@ nav ul li {
   padding: 0.625rem;
   margin-bottom: 1.875rem;
   background: var(--primary-white);
+  transition: 0.3s ease-in-out;
 }
 
 .services .box:hover {
@@ -243,4 +244,17 @@ nav ul li {
 
 .services .box:hover h3 {
   color: var(--primary-white);
+}
+
+/**********Portfolio*******/
+
+.portfolio-wraper {
+  background: var(--primary-light-grey);
+  padding: 3rem 0;
+}
+
+.portfolio-image {
+  width: 15rem;
+  border: 1px solid var(--primary-orange);
+  padding: 0 0.5rem;
 }
