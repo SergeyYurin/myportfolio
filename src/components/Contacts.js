@@ -1,6 +1,34 @@
 import React from 'react';
+import emailjs from 'emailjs-com';
+/* eslint-disable */
 
 const Contacts = () => {
+  const serviceID = 'service_ID';
+
+  const templateID = 'template_ID';
+
+  const userID = 'user_9ioOXoLGkX2NTLcAXbSV6';
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        service_ID,
+        template_ID,
+        e.target,
+        user_9ioOXoLGkX2NTLcAXbSV6
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <div className='contacts'>
       <div className='text-center'>
@@ -11,55 +39,72 @@ const Contacts = () => {
         </p>
       </div>
       <div className='container'>
-        <div className='row'>
-          <div className='col-md-6 col-xs-12'>
-            {/*Name input*/}
-            <input
-              type='text'
-              className='form-control'
-              placeholder='Name'
-              name='name'
-            />
-            {/*Phone input*/}
-            <input
-              type='text'
-              className='form-control'
-              placeholder='Phone'
-              phone='phone'
-            />
-            {/*Email input*/}
-            <input
-              type='email'
-              className='form-control'
-              placeholder='Email'
-              email='email'
-            />
-            {/*Subject input*/}
-            <input
-              type='text'
-              className='form-control'
-              placeholder='Subject'
-              subject='subject'
-            />
+        <form onSubmit={sendEmail}>
+          <div className='row'>
+            <div className='col-md-6 col-xs-12'>
+              {/*Name input*/}
+              <div className='text-center'>
+                <input
+                  type='text'
+                  className='form-control'
+                  placeholder='Name'
+                  name='name'
+                />
+                <div className='line'></div>
+              </div>
+              {/*Phone input*/}
+              <div className='text-center'>
+                <input
+                  type='text'
+                  className='form-control'
+                  placeholder='Phone'
+                  name='phone'
+                />
+                <div className='line'></div>
+              </div>
+              {/*Email input*/}
+              <div className='text-center'>
+                <input
+                  type='email'
+                  className='form-control'
+                  placeholder='Email'
+                  name='email'
+                />
+                <div className='line'></div>
+              </div>
+              {/*Subject input*/}
+              <div className='text-center'>
+                <input
+                  type='text'
+                  className='form-control'
+                  placeholder='Subject'
+                  name='subject'
+                />
+                <div className='line'></div>
+              </div>
+            </div>
+            <div className='col-md-6 col-xs-12'>
+              {/*Description*/}
+              <div className='text-center'>
+                <textarea
+                  type='text'
+                  className='form-control'
+                  placeholder='Describe your request'
+                  name='description'
+                ></textarea>
+                <div className='line'></div>
+              </div>
+            </div>
+            <div className='text-center'>
+              <button
+                className='btn-main-offer contact-btn'
+                type='submit'
+              >
+                send request
+              </button>
+            </div>
           </div>
-          <div className='col-md-6 col-xs-12'>
-            {/*Description*/}
-            <textarea
-              type='text'
-              className='form-control'
-              placeholder='Describe your request'
-              subject='Describe your request'
-            ></textarea>
-          </div>
-          <div className='text-center'>
-            <button
-              className='btn-main-offer contact-btn'
-              type='submit'
-            >
-              send request
-            </button>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );
