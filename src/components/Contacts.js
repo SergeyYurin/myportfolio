@@ -12,21 +12,14 @@ const Contacts = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        service_ID,
-        template_ID,
-        e.target,
-        user_9ioOXoLGkX2NTLcAXbSV6
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(serviceID, templateID, e.target, userID).then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
