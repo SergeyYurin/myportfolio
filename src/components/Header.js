@@ -19,9 +19,9 @@ function Header() {
           backSpeed={60}
           loop
         />
-        <a href='#' className='btn-main-offer'>
+        {/* <a href='#' className='btn-main-offer'>
           Contact me
-        </a>
+        </a> */}
       </div>
     </div>
   );
