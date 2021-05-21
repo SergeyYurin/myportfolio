@@ -7,6 +7,8 @@
   --primary-green: #4AB834;
   --primary-dark: rgb(255, 255, 255, 0);
   --primary-dark2: rgb(52, 58, 64);
+  --primary-grey: rgb(44, 48, 52);
+  --primary-med-grey: rgb(107, 113, 120);
   --primary-red: #f04019;
   --primary-hover-red: #bf2402;
 }
@@ -243,4 +245,87 @@ nav ul li {
 
 .services .box:hover h3 {
   color: var(--primary-white);
+}
+
+/**********Contact-me******/
+
+.contacts {
+  background: var(--primary-dark2);
+  padding: 3rem 0;
+}
+
+.contacts h1 {
+  color: var(--primary-orange);
+  padding: 1.3rem 0;
+  text-transform: uppercase;
+}
+
+.contacts p {
+  color: var(--primary-light-grey);
+  font-size: 1.2rem;
+}
+
+/**********Inputs******/
+
+.contacts input, .contacts textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+  resize: none;
+  border: 0;
+  border-bottom: 0.125rem solid var(--primary-med-grey);
+  border-radius: 0;
+  color: var(--primary-light-grey);
+  outline: 0 !important;
+  box-shadow: none !important;
+  top: 0;
+  margin-bottom: 1rem;
+}
+
+.contacts .container {
+  padding: 4rem 0;
+}
+
+.contacts input:focus, .contacts textarea:focus {
+  background: transparent;
+  color: var(--primary-white);
+  border-bottom: 0.125rem solid var(--primary-med-grey);
+}
+
+.contacts textarea {
+  height: 12.5rem !important;
+}
+
+.contacts button {
+  margin: 1rem 0 0 0;
+  width: 50%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: absolute;
+  transform: translateX(-50%);
+  background: none;
+}
+
+.contacts button:hover {
+  margin: 1rem 0 0 0;
+  width: 50%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: absolute;
+  transform: translateX(-50%);
+  background: var(--primary-red);
+}
+
+/**********Media******/
+
+@media(max-width: 767px) {
+  .contacts {
+    overflow-x: hidden;
+  }
+  .contacts .container {
+    padding: 0 1rem;
+  }
+  .contacts p {
+    padding: 0 0.8rem;
+  }
 }
