@@ -339,6 +339,19 @@ textarea.form-control {
   background: var(--primary-red);
 }
 
+.error-message {
+  color: var(--primary-white);
+  background: var(--primary-red);
+  text-align: left;
+  margin-top: 0.125rem;
+}
+
+.success-message {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-green);
+}
+
 /**********Media******/
 
 @media(max-width: 767px) {

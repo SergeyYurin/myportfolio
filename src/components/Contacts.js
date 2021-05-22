@@ -1,25 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { useForm } from 'react-hook-form';
+
 /* eslint-disable */
 
 const Contacts = () => {
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const serviceID = 'service_ID1';
 
   const templateID = 'template_ID';
 
   const userID = 'user_9ioOXoLGkX2NTLcAXbSV6';
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm(serviceID, templateID, e.target, userID).then(
-      (result) => {
-        console.log(result.text);
+  const onSubmit = (data, r) => {
+    sendEmail(
+      serviceID,
+      templateID,
+      {
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        subject: data.subject,
+        description: data.description,
       },
-      (error) => {
-        console.log(error.text);
-      }
+      userID
     );
+    r.target.reset();
+  };
+
+  const sendEmail = (serviceID, templateID, variables, userID) => {
+    emailjs
+      .send(serviceID, templateID, variables, userID)
+      .then(() => {
+        setSuccessMessage(
+          "Form sent successfully! I'll contact you as soon as possible."
+        );
+      })
+      .catch((err) => console.error(`Something went wrong ${err}`));
   };
 
   return (
@@ -30,9 +54,10 @@ const Contacts = () => {
           Please fill up the form and describe your project and I will
           contact you as soon as possble
         </p>
+        <span className='success-message'>{successMessage}</span>
       </div>
       <div className='container'>
-        <form onSubmit={sendEmail}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className='row'>
             <div className='col-md-6 col-xs-12'>
               {/*Name input*/}
@@ -42,19 +67,43 @@ const Contacts = () => {
                   className='form-control'
                   placeholder='Name'
                   name='name'
+                  aria-invalid={errors.name ? 'true' : 'false'}
+                  {...register('name', {
+                    required: 'Please enter your name',
+                    maxLength: {
+                      value: 20,
+                      message:
+                        'Please enter a name with no more than 20 characters',
+                    },
+                  })}
                 />
                 <div className='line'></div>
               </div>
+              <span className='error-message'>
+                {errors.name && errors.name.message}
+              </span>
               {/*Phone input*/}
               <div className='text-center'>
                 <input
-                  type='text'
+                  type='tel'
                   className='form-control'
-                  placeholder='Phone'
+                  placeholder='Phone number in format: 123-456-7890'
                   name='phone'
+                  aria-invalid={errors.phone ? 'true' : 'false'}
+                  {...register('phone', {
+                    required: 'Please add your phone number',
+                    pattern: {
+                      value: /^[0-9]{3}-[0-9]{3}-[0-9]{4}/i,
+                      message: 'invalid phone number',
+                    },
+                  })}
                 />
+
                 <div className='line'></div>
               </div>
+              <span className='error-message'>
+                {errors.phone && errors.phone.message}
+              </span>
               {/*Email input*/}
               <div className='text-center'>
                 <input
@@ -62,9 +111,21 @@ const Contacts = () => {
                   className='form-control'
                   placeholder='Email'
                   name='email'
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  {...register('email', {
+                    required: 'Please provide your email',
+                    pattern: {
+                      value:
+                        /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: 'invalid email',
+                    },
+                  })}
                 />
                 <div className='line'></div>
               </div>
+              <span className='error-message'>
+                {errors.email && errors.email.message}
+              </span>
               {/*Subject input*/}
               <div className='text-center'>
                 <input
@@ -72,9 +133,16 @@ const Contacts = () => {
                   className='form-control'
                   placeholder='Subject'
                   name='subject'
+                  aria-invalid={errors.subject ? 'true' : 'false'}
+                  {...register('subject', {
+                    required: 'Please add your subject',
+                  })}
                 />
                 <div className='line'></div>
               </div>
+              <span className='error-message'>
+                {errors.subject && errors.subject.message}
+              </span>
             </div>
             <div className='col-md-6 col-xs-12'>
               {/*Description*/}
@@ -84,9 +152,17 @@ const Contacts = () => {
                   className='form-control'
                   placeholder='Describe your request'
                   name='description'
+                  aria-invalid={errors.description ? 'true' : 'false'}
+                  {...register('description', {
+                    required:
+                      'Please describe your request or project',
+                  })}
                 ></textarea>
                 <div className='line'></div>
               </div>
+              <span className='error-message'>
+                {errors.description && errors.description.message}
+              </span>
             </div>
             <div className='text-center'>
               <button
