@@ -87,13 +87,13 @@ const Contacts = () => {
                 <input
                   type='tel'
                   className='form-control'
-                  placeholder='Phone number in format: 123-456-7890'
+                  placeholder='Phone number in format: 1234567890'
                   name='phone'
                   aria-invalid={errors.phone ? 'true' : 'false'}
                   {...register('phone', {
                     required: 'Please add your phone number',
                     pattern: {
-                      value: /^[0-9]{3}-[0-9]{3}-[0-9]{4}/i,
+                      value: /^[0-9]{3}[0-9]{3}[0-9]{4}/i,
                       message: 'invalid phone number',
                     },
                   })}

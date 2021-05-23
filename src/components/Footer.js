@@ -5,6 +5,8 @@ import {
   faTwitter,
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-scroll';
+
 /* eslint-disable */
 
 const Footer = () => {
@@ -17,21 +19,38 @@ const Footer = () => {
               <p>Chicago city, IL</p>
             </div>
             <div className='d-flex'>
-              <a href='tel:555-555-5555'>+1(630)994-0722</a>
+              <a href='tel:630-994-0722'>+1(630)994-0722</a>
             </div>
           </div>
           <div className='col-lg-3 col-md-2 col-sm-6'>
             <div className='row'>
               <div className='col'>
-                <a className='footer-nav'>Home</a>
+                <Link
+                  smooth={true}
+                  to='home'
+                  offset={-70}
+                  className='footer-nav'
+                >
+                  Home
+                </Link>
                 <br />
-                <a className='footer-nav'>About me</a>
+                <Link
+                  smooth={true}
+                  to='about'
+                  offset={-70}
+                  className='footer-nav'
+                >
+                  About me
+                </Link>
                 <br />
-              </div>
-              <div className='col'>
-                <a className='footer-nav'>Services</a>
-                <br />
-                <a className='footer-nav'>Contacts</a>
+                <Link
+                  smooth={true}
+                  to='services'
+                  offset={-70}
+                  className='footer-nav'
+                >
+                  Services
+                </Link>
               </div>
             </div>
           </div>

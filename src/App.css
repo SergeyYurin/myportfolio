@@ -3,7 +3,7 @@
 :root {
   --primary-white: #ffffff;
   --primary-light-grey: #f4f4f4;
-  --primary-orange: #e69823;
+  --primary-orange: #FF871A;
   --primary-green: #4AB834;
   --primary-dark: rgb(255, 255, 255, 0);
   --primary-dark2: rgb(52, 58, 64);
@@ -51,6 +51,7 @@ nav ul li {
 .navbar-brand {
   max-width: 17.25rem;
   padding: 0 !important;
+  /* padding-bottom: 0.2rem !important; */
   height: 4rem !important;
 }
 
